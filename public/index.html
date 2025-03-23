@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spirit 2K25 Registration Form</title>
+</head>
+<body>
+
+    
+    <h1>Spirit 2K25 Registration Form</h1>
+<form action="/" method="POST" enctype="multipart/form-data">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    <br><br>
+
+    <label for="department">Department:</label>
+    <select name="department" id="department" required>
+        <option value="">Select your Department</option>
+        <option value="IT">IT</option>
+        <option value="CSE">CSE</option>
+        <option value="CS">Cyber</option>
+        <option value="AIDS">AIDS</option>
+        <option value="ECE">ECE</option>
+        <option value="EEE">EEE</option>
+        <option value="Mech">Mech</option>
+        <option value="Aero">Aero</option>
+        <option value="Aero">Civil</option>
+    </select>
+    <br><br>
+
+    <label for="year">Year:</label>
+    <select name="year" id="year" required>
+        <option value="">Select your year of study</option>
+        <option value="I">I</option>
+        <option value="II">II</option>
+        <option value="III">III</option>
+        <option value="IV">IV</option>
+    </select>
+    <br><br>
+
+    <label for="college">College Name:</label>
+    <input type="text" id="college" name="college" placeholder="Enter your college name" required>
+    <br><br>
+
+    <label for="phone">Phone no:</label>
+    <input type="text" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Enter your phone number" required>
+    <br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter email id" required>
+    <br><br>
+
+    <label for="tech-events">Tech-events:</label><br>
+    <label><input type="checkbox" name="techEvents[]" value="PPT"> PPT</label>
+    <label><input type="checkbox" name="techEvents[]" value="Code Crack"> Code Crack</label>
+    <label><input type="checkbox" name="techEvents[]" value="Web Design"> Web Design</label>
+    <label><input type="checkbox" name="techEvents[]" value="Prompt Engineering"> Prompt Engineering</label>
+    <label><input type="checkbox" name="techEvents[]" value="Tech Quiz"> Tech Quiz</label>
+    <br><br>
+
+    <label for="nontech-events">Non-Tech events:</label><br>
+    <label><input type="checkbox" name="nonTechEvents[]" value="Short Film"> Short Film</label>
+    <label><input type="checkbox" name="nonTechEvents[]" value="Damsaras"> Damsaras</label>
+    <label><input type="checkbox" name="nonTechEvents[]" value="Spotify Vibes"> Spotify Vibes</label>
+    <label><input type="checkbox" name="nonTechEvents[]" value="Theme Photography"> Theme Photography</label>
+    <label><input type="checkbox" name="nonTechEvents[]" value="Walker Bottle"> Walker Bottle</label>
+    <br><br>
+
+    <label for="online-events">Online Events:</label><br>
+    <label><input type="checkbox" name="onlineEvents[]" value="Free-fire"> Free-fire</label>
+    <label><input type="checkbox" name="onlineEvents[]" value="Pubg"> Pubg</label>
+    <label><input type="checkbox" name="onlineEvents[]" value="E-football"> E-football</label>
+    <br><br>
+
+    <label for="register">Pay here 👇</label><br>
+    <a href="upi://pay?pa=skrishnapriya0108@okicici&pn=Krishna Priya.S&am=200" target="_blank">
+        <img src="gpay.png" height="250" width="250" alt="scan to pay">
+    </a>
+    <br><br>
+
+    <label for="paymentScreenshot">Upload Payment Screenshot:</label>
+    <input type="file" id="paymentScreenshot" name="paymentScreenshot" accept="image/*" required>
+    <br><br>
+
+    <img id="preview" src="#" alt="Payment Screenshot Preview" style="display: none; max-width: 300px; margin-top: 10px;">
+    <br><br>
+
+    <button type="submit">Submit</button>
+</form>
+    
+    <script src="sympo.js"></script> 
+
+ 
+</body>
+</html>
+
+
