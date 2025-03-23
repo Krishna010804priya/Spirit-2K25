@@ -3,7 +3,7 @@ const app = express();
 const path = require("path");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const multer = require("multer");
+// const multer = require("multer");  ....
 const cors = require("cors"); // Allow frontend requests
 
 // Middleware
@@ -19,17 +19,17 @@ mongoose.connect(process.env.MONGO_URI)
     .catch(err => console.log("❌ MongoDB Connection Error:", err));
 
 // Define Storage Engine for File Uploads
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        const uploadPath = path.join(__dirname, "public", "uploads/");
-        cb(null, uploadPath); // Save files in 'public/uploads'
-    },
-    filename: function (req, file, cb) {
-        cb(null, req.body.name + Date.now() + path.extname(file.originalname)); // Unique filename
-    }
-});
+// const storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//         const uploadPath = path.join(__dirname, "public", "uploads/");
+//         cb(null, uploadPath); // Save files in 'public/uploads'
+//     },
+//     filename: function (req, file, cb) {
+//         cb(null, req.body.name + Date.now() + path.extname(file.originalname)); // Unique filename
+//     }
+// });
 
-const upload = multer({ storage: storage });
+// const upload = multer({ storage: storage });  ...
 
 // Registration Schema
 const registrationSchema = new mongoose.Schema({
@@ -42,7 +42,7 @@ const registrationSchema = new mongoose.Schema({
     techEvents: { type: [String], default: [] },
     nonTechEvents: { type: [String], default: [] },
     onlineEvents: { type: [String], default: [] },
-    paymentScreenshot: { type: String, required: true },
+    // paymentScreenshot: { type: String, required: true },
     registeredAt: { type: Date, default: Date.now }
 });
 
@@ -75,7 +75,7 @@ app.post("/", upload.single("paymentScreenshot"), async (req, res) => {
         const onlineEventsArray = Array.isArray(onlineEvents) ? onlineEvents : onlineEvents ? [onlineEvents] : [];
 
     
-        const paymentScreenshotPath = req.file ? `uploads/${req.body.name}_${Date.now()}${path.extname(req.file.originalname)}` : null;
+        // const paymentScreenshotPath = req.file ? `uploads/${req.body.name}_${Date.now()}${path.extname(req.file.originalname)}` : null;
 
         const newRegistration = new Registration({
             name,
@@ -86,8 +86,8 @@ app.post("/", upload.single("paymentScreenshot"), async (req, res) => {
             email,
             techEvents: techEventsArray,
             nonTechEvents: nonTechEventsArray,
-            onlineEvents: onlineEventsArray,
-            paymentScreenshot: paymentScreenshotPath
+            onlineEvents: onlineEventsArray
+            // paymentScreenshot: paymentScreenshotPath
         });
 
         await newRegistration.save();
