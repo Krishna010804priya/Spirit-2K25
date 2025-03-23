@@ -19,12 +19,15 @@
   "homepage": "https://github.com/Krishna010804priya/Spirit-2K25#readme",
   "dependencies": {
     "body-parser": "^1.20.3",
+    "cloudinary": "^1.41.3",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "fs": "^0.0.1-security",
     "moment-timezone": "^0.5.48",
     "mongoose": "^8.12.2",
     "multer": "^1.4.5-lts.2",
+    "multer-storage-cloudinary": "^4.0.0",
     "path": "^0.12.7"
   }
 }
